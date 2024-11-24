@@ -191,7 +191,31 @@
             gap: 20px; /* Adjusts spacing between columns */
         }
 
-        .col-content,
+            .dark-mode .col-content {
+                background-color: white; /* Same as .box in dark mode */
+                border: 1px solid #444; /* Match border style */
+                color: black; /* Text color for dark mode */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Ensure shadow matches */
+                transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .dark-mode .col-content h4 {
+                color: black; /* Text color for headings */
+            }
+
+            .col-content {
+                background-color: #f9f9f9; /* Match light mode color */
+                border: 1px solid #ddd; /* Match border style */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border-radius: 10px;
+            }
+
+            .col-content:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Match hover effect */
+            }
+
         .box {
             overflow: hidden;
             border-radius: 8px;
@@ -214,11 +238,13 @@
             .package-title {
                 text-align: center;
                 margin-top: 20px;
+                text-decoration: underline;
             }
 
             .package-title h2 {
                 font-size: 2em;
                 margin-bottom: 20px;
+                text-underline: black;
             }
 
             /* Grid layout for packages */
@@ -234,12 +260,19 @@
             /* Styling for each package box */
             .box {
                 background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                padding: 10px;
                 border-radius: 8px;
                 overflow: hidden;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
                 text-align: center;
-                padding: 10px;
+
+            }
+
+            .green-escape {
+                grid-column: 2/3;
+                grid-row: 5/6;
             }
 
             /* Uniform image styling */
@@ -263,7 +296,7 @@
 
             h3, h4 {
                 margin: 10px 0;
-                color: #333;
+                color: black;
             }
 
 
@@ -309,6 +342,46 @@
             background-color: black;
             color: #e0e0e0;
         }
+            /* Review Section Specific Styling */
+            body.dark-mode #reviews {
+                background-color: black; /* Dark background for review section */
+                color: #e0e0e0;           /* Lighter text for contrast */
+            }
+
+            body.dark-mode .review-card {
+                background-color: black; /* Card background in dark mode */
+                border: 1px solid #444;    /* Subtle border for separation */
+                color: #dcdcdc;            /* Text color inside cards */
+            }
+
+            body.dark-mode .review-card span {
+                color: red;            /* Gold stars for reviews */
+            }
+            body.dark-mode .review-card h4 {
+                color: white;            /* Gold stars for reviews */
+            }
+
+            /* Default (Light Mode) Review Styling */
+            .reviews-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            .review-card {
+                width: 30%;
+                background: white;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 20px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                color: #333;
+            }
+
+            .review-card span {
+                color: red; /* Golden stars in light mode */
+            }
 
         .dark-mode .card {
             background-color: black;
@@ -408,6 +481,7 @@ nav {
             .package-title {
                 text-align: center;
                 margin-bottom: 20px;
+
             }
 
 
@@ -425,8 +499,63 @@ nav {
                 font-weight: bold; /* Optional: Make text bold */
             }
 
+            .popular-tag {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background-color: #ff5722; /* Bright color for visibility */
+                color: #fff;
+                padding: 5px 10px;
+                font-size: 12px;
+                font-weight: bold;
+                border-radius: 4px;
+                z-index: 10;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for better aesthetics */
+            }
+ .budget-tag {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background-color: green; /* Bright color for visibility */
+                color: #fff;
+                padding: 5px 10px;
+                font-size: 12px;
+                font-weight: bold;
+                border-radius: 4px;
+                z-index: 10;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for better aesthetics */
+            }
 
+            .trending-tag {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background-color: blue; /* Bright color for visibility */
+                color: #fff;
+                padding: 5px 10px;
+                font-size: 12px;
+                font-weight: bold;
+                border-radius: 4px;
+                z-index: 10;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for better aesthetics */
+            }
 
+                .tagline-moinak {
+                    font-family: 'Arial', sans-serif; /* Modern and elegant font */
+                    font-size: 1.8em; /* Larger font size */
+                    font-weight: bold; /* Bold to make it stand out */
+                    text-align: center; /* Center-align the text */
+                    color: #1a73e8; /* Text color */
+                    letter-spacing: 1px; /* Slight spacing between letters */
+                    line-height: 1.5; /* Space between lines if wrapped */
+                    background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Gradient background */
+                    border-radius: 5px; /* Rounded corners */
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+                    text-transform: uppercase; /* Uppercase for emphasis */
+                    display: inline-block; /* Makes the background fit the text size */
+                    padding: 5px 10px; /* Small padding to make the background hug the text */
+                    margin: 20px auto; /* Center with space around */
+                }
 
 
 
@@ -448,7 +577,7 @@ nav {
                     <a href="#locations">Locations</a>
                     <a href="#package">Packages</a>
                     <a href="./about.html">About Us</a>
-                    <img id="dark-mode-toggle" class="btn-submit" src="https://img.icons8.com/?size=100&id=36EqOe9P0ePR&format=png&color=F61616" alt="Dark Mode Toggle" width="30px">
+                    <img id="dark-mode-toggle" class="btn-submit" src="https://img.icons8.com/?size=100&id=20015&format=png&color=000000" alt="Dark Mode Toggle" width="30px">
                 </li>
             </ul>
         </nav>
@@ -457,7 +586,7 @@ nav {
         <div class="title">
             <h1>ANDAMAN ATTOLS</h1>
             <p>Plan your trip with us and travel around the Islands with the most affordable to luxurious packages!</p>
-            <a href="./register.html" class="button">Register Now!</a>
+            <a href="./register.html" class="button">Book Now!</a>
         </div>
     </div>
 
@@ -483,7 +612,7 @@ nav {
             <h4>Port Blair</h4>
         </div>
         <div class="col-content">
-            <img src="./files/l4.jpg" alt="Baratang" class="location-image">
+            <img src="./files/baratang.jpg" alt="Baratang" class="location-image">
             <h4>Baratang</h4>
         </div>
         <div class="col-content">
@@ -515,28 +644,34 @@ nav {
                 <h3>18,000/-</h3>
                 <h4>EXOTIC ANDAMAN</h4>
             </div>
-        </div> <div class="box">
+        </div>
+
+        <div class="box">
             <div class="image">
-                <a href="unexploredAndaman.html"><img src="./files/unexplore.jpg" alt="Exotic Andaman"></a>
+                <span class="popular-tag">Most Popular</span>
+                <a href="unexploredAndaman.html"><img src="./files/unexplore.jpg" alt="Unexplored Andaman"></a>
                 <h3>55,000/-</h3>
                 <h4>UNEXPLORED ANDAMAN</h4>
             </div>
-        </div> <div class="box">
+        </div>
+
+        <div class="box">
             <div class="image">
                 <a href="ExploredPortBlair.html"><img src="./files/explor-portblair.jpg" alt="Exotic Andaman"></a>
-                <h3>26,250/-</h3>
+                <h3>27,000/-</h3>
                 <h4>EXPLORE PORT BLAIR</h4>
             </div>
         </div> <div class="box">
             <div class="image">
+                <span class="trending-tag">Trending</span>
                 <a href="ExploreAndaman.html"><img src="./files/explore.jpg" alt="Exotic Andaman"></a>
-                <h3>34,750/-</h3>
+                <h3>35,000/-</h3>
                 <h4>EXPLORE ANDAMAN</h4>
             </div>
         </div> <div class="box">
             <div class="image">
                 <a href="weekendAnd.html"><img src="./files/short.jpg" alt="Exotic Andaman"></a>
-                <h3>18250/-</h3>
+                <h3>19,000/-</h3>
                 <h4>WEEKEND ANDAMAN</h4>
             </div>
         </div>
@@ -544,7 +679,7 @@ nav {
         <div class="box">
             <div class="image">
                 <a href="TropicalIslands.html"><img src="./files/tropicall.webp" alt="Tropical Andaman"></a>
-                <h3>41,5000/-</h3>
+                <h3>41,500/-</h3>
                 <h4>TROPICAL ANDAMAN</h4>
             </div>
         </div>
@@ -568,7 +703,7 @@ nav {
         <div class="box">
             <div class="image">
                 <a href="unseenAndaman.html"><img src="./files/unseenandaman.jpg" alt="Unseen Andaman"></a>
-                <h3>23,000/-</h3>
+                <h3>25,000/-</h3>
                 <h4>UNSEEN ANDAMAN</h4>
             </div>
         </div>
@@ -576,7 +711,7 @@ nav {
         <div class="box">
             <div class="image">
                 <a href="runaway.html"><img src="./files/runawayandaman.jpg" alt="Runaway Andaman"></a>
-                <h3>23,000/-</h3>
+                <h3>24,000/-</h3>
                 <h4>RUNAWAY ANDAMAN</h4>
             </div>
         </div>
@@ -584,15 +719,16 @@ nav {
         <div class="box">
             <div class="image">
                 <a href="elegantAndaman.html"><img src="./files/elegantamndaman.jpg" alt="Elegant Andaman"></a>
-                <h3>26,625/-</h3>
+                <h3>27,000/-</h3>
                 <h4>ELEGANT ANDAMAN</h4>
             </div>
         </div>
 
         <div class="box">
             <div class="image">
+                <span class="budget-tag">Budget Friendly</span>
                 <a href="heritage.html"><img src="./files/heritageandaman.jpg" alt="Heritage Andaman"></a>
-                <h3>16,250/-</h3>
+                <h3>17,000/-</h3>
                 <h4>HERITAGE ANDAMAN</h4>
             </div>
         </div>
@@ -602,6 +738,17 @@ nav {
                 <a href="Magical.html"><img src="./files/magicalandamannn.jpg" alt="Magical Andaman Experience"></a>
                 <h3>30,000/-</h3>
                 <h4>Magical Andaman Experience</h4>
+            </div>
+        </div>
+        <div class="dest-content">
+
+        </div>
+
+        <div class="box green-escape " >
+            <div class="image">
+                <a href="greenescape.html"><img src="./files/green.jpg" alt="Magical Andaman Experience"></a>
+                <h3>23,000/-</h3>
+                <h4>Green Escape Andaman</h4>
             </div>
         </div>
         <div class="dest-content">
@@ -623,7 +770,8 @@ nav {
                     <a href="honeymoonSpecial.html">
                         <img src="./files/honeymoon-delights1.jpg" alt="Honeymoon Delight Image 1">
                     </a>
-                    <h3>21,750/-</h3>
+                    <h3>46,000/-</h3>
+                    <span class="popular-tag">Most Popular</span>
                     <h4>HONEYMOON SPECIAL ANDAMAN</h4>
                 </div>
             </div>
@@ -634,7 +782,7 @@ nav {
                     <a href="Honeymoon.html">
                         <img src="./files/honey.webp" alt="Honeymoon Delight Image 2">
                     </a>
-                    <h3>Rs. 25,000/-</h3>
+                    <h3>Rs. 35,000/-</h3>
                     <h4>HONEYMOON DELIGHT</h4>
                 </div>
             </div>
@@ -642,18 +790,78 @@ nav {
             <!-- Package Box 3 -->
             <div class="box">
                 <div class="image">
-                    <a href="Honeymoon.html">
+                    <span class="budget-tag">Budget Freindly</span>
+                    <a href="honeymoonBliss.html">
                         <img src="./files/honemoon-bonanza.jpeg" alt="Honeymoon Delight Image 2">
                     </a>
-                    <h3>Rs. 25,000/-</h3>
-                    <h4>HONEYMOON BONANZA</h4>
+                    <h3>Rs. 30,000/-</h3>
+                    <h4>HONEYMOON BLISS</h4>
                 </div>
             </div>
 
         </div>
     </section>
 
-
+<!-- Review -->
+<section id="reviews" style="padding: 50px;">
+    <h2 style="text-align: center; margin-bottom: 30px; text-decoration: underline;">GUEST'S REVIEWS</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <!-- Review 1 -->
+        <div class="review-card">
+            <h4>Rajesh Gupta</h4>
+            <p>"The arrangements were excellent! The sunset view at Radhanagar Beach was breathtaking."</p>
+            <span>★★★★★</span>
+        </div>
+        <!-- Review 2 -->
+        <div class="review-card">
+            <h4>Meera Sharma</h4>
+            <p>"Great experience overall. However, the transport could have been a bit more comfortable."</p>
+            <span>★★★★★</span>
+        </div>
+        <!-- Review 3 -->
+        <div class="review-card">
+            <h4>Ankit Verma</h4>
+            <p>"The scuba diving was the highlight of the trip! The guides were knowledgeable and friendly."</p>
+            <span>★★★★★</span>
+        </div>
+        <!-- Review 4 -->
+        <div class="review-card">
+            <h4>Priya Nair</h4>
+            <p>"The tour was well-organized. My kids loved the ferry rides and the water sports activities."</p>
+            <span>★★★★★</span>
+        </div>
+        <!-- Review 5 -->
+        <div class="review-card">
+            <h4>Sunil Reddy</h4>
+            <p>"Affordable and well-planned. The food options on Havelock Island could be better, though."</p>
+            <span>★★★★☆</span>
+        </div>
+        <!-- Review 6 -->
+        <div class="review-card">
+            <h4>Aditi Patel</h4>
+            <p>"The candlelight dinner at the beach was magical! A perfect honeymoon experience."</p>
+            <span>★★★★★</span>
+        </div>
+        <!-- Review 7 -->
+        <div class="review-card">
+            <h4>Vikram Malhotra</h4>
+            <p>"The resort booking was seamless, and the local tour guide was very informative."</p>
+            <span>★★★★☆</span>
+        </div>
+        <!-- Review 8 -->
+        <div class="review-card">
+            <h4>Deepa Iyer</h4>
+            <p>"We enjoyed exploring the coral reefs. A little more time at Ross Island would have been nice."</p>
+            <span>★★★★★</span>
+        </div>
+        <!-- Review 9 -->
+        <div class="review-card">
+            <h4>Karan Joshi</h4>
+            <p>"Excellent service! The team went above and beyond to make our anniversary special."</p>
+            <span>★★★★★</span>
+        </div>
+    </div>
+</section>
 
 
 
@@ -669,7 +877,7 @@ nav {
                     <li><a href="./about.html">About Us</a></li>
                     <li><a href="./contact.html">Contact Us</a></li>
                     <li><a href="./files/Terms.pdf" download="Terms & Conditions.pdf">Terms & Conditions</a></li>
-                                        <li><a href="./files/INCLUDES , EXCLUDES (2).pdf" download="Includes & Excludes.pdf">Includes & Excludes</a></li>
+                    <li><a href="./files/INCLUDES , EXCLUDES (2).pdf" download="Includes & Excludes.pdf">Includes & Excludes</a></li>
                 </ul>
             </div>
 
@@ -678,25 +886,23 @@ nav {
                 <div class="social">
                     <a href="https://www.instagram.com/andaman_attols?igsh=ZjdmZDdyNW1zYzVt&utm_source=qr" target="_blank"><i class='bx bxl-instagram'></i></a>
                     <a href="https://wa.me/917063927931" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-                    <a href="mailto:anamanattols@gmail.com" target="_blank"><i class='bx bxl-gmail'></i></a>
+                    <a href="mailto:andamanattols@gmail.com" target="_blank"><i class='bx bxl-gmail'></i></a>
                 </div>
             </div>
+
             <div class="footlinks">
                 <a href="review.html"><h4>REVIEW</h4></a>
-                <div class="social">
-
-                </div>
             </div>
-
         </div>
     </div>
 
+
     <div class="end">
-        <p>Copyright © 2024 Andaman Attols All Rights Reserved.<br>Website developed by Scoder6</p>
-<!--        <span> Scoder6</span>-->
+        <p>Copyright © 2024 Andaman Attols All Rights Reserved.<br>Website developed by Andaman Attols</p>
+        <p class="tagline-moinak">"Making Dreams Come True, One Destination At A Time"</p>
+
     </div>
 </section>
-
     <script>
         const darkModeToggle = document.getElementById("dark-mode-toggle");
         darkModeToggle.addEventListener("click", () => {
